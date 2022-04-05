@@ -38,14 +38,17 @@ class SetConsents implements MiddlewareInterface
             $cookieData = json_decode($cookies[$cookieName], true);
             $consents = $cookieData['consents'];
 
-            // Extract variables from the cookie data.
-            $customConsent = $consents['custom_consent']['status'] === -1;
-
             // Temporarily store consent information in context so views can read it for conditional rendering.
-            $context->setAspect('piwik.consent', GeneralUtility::makeInstance(ConsentAspect::class, $customConsent));
+            $context->setAspect(
+                ConsentManagerController::$ASPECT_NAME,
+                GeneralUtility::makeInstance(ConsentAspect::class, $consents)
+            );
         } else {
             // If no cookie was sent, set all consents to false.
-            $context->setAspect('piwik.consent', GeneralUtility::makeInstance(ConsentAspect::class, false));
+            $context->setAspect(
+                ConsentManagerController::$ASPECT_NAME,
+                GeneralUtility::makeInstance(ConsentAspect::class, [])
+            );
         }
 
         return $handler->handle($request);

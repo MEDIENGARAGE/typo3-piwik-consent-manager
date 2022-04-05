@@ -6,36 +6,44 @@ use TYPO3\CMS\Core\Context\AspectInterface;
 use TYPO3\CMS\Core\Context\Exception\AspectPropertyNotFoundException;
 
 /**
- * The aspect contains information about a visitors data privacy consents
+ * The aspect contains information about a visitor's data privacy consents
  */
 class ConsentAspect implements AspectInterface
 {
-    /**
-     * @var bool
-     */
-    protected $customConsent = false;
+    private $consentsAvailable = [
+        'custom_consent',
+        'analytics'
+    ];
 
     /**
-     * @param bool $customConsent
+     * @var array<bool>
      */
-    public function __construct(bool $customConsent = false)
+    protected $consents = [];
+
+    /**
+     * @param array $consents
+     */
+    public function __construct(array $consents = [])
     {
-        $this->customConsent = $customConsent;
+        foreach ($this->consentsAvailable as $consent) {
+            // TODO: Instead of not equals -1 better equals 1 or whatever positiv value is
+            $this->consents[$consent] = !empty($consents[$consent]) && $consents[$consent]['status'] !== -1;
+        }
     }
 
     /**
-     * Fetch common information about the user
+     * Fetch status of different consents.
      *
      * @param string $name
      * @return bool
      * @throws AspectPropertyNotFoundException
      */
-    public function get(string $name)
+    public function get(string $name): bool
     {
-        switch ($name) {
-            case 'customConsent':
-                return $this->customConsent;
+        if (array_key_exists($name, $this->consents)) {
+            return $this->consents[$name];
         }
+
         throw new AspectPropertyNotFoundException('Property "' . $name . '" not found in Aspect "' . __CLASS__ . '".', 1529996567);
     }
 }
