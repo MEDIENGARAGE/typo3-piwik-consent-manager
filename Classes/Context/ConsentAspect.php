@@ -1,7 +1,8 @@
 <?php
 
-namespace TYPO3\CMS\Core\Context;
+namespace MEDIENGARAGE\Piwikconsentmanager\Context;
 
+use TYPO3\CMS\Core\Context\AspectInterface;
 use TYPO3\CMS\Core\Context\Exception\AspectPropertyNotFoundException;
 
 /**

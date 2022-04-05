@@ -10,14 +10,14 @@
  *   ]
  */
 return [
-    'backend' => [
+    'frontend' => [
         'mediengarage/consent/set' => [
             'target' => \MEDIENGARAGE\Piwikconsentmanager\Middleware\SetConsents::class,
 //            'before' => [
 //                'typo3/cms-frontend/authentication',
 //            ],
             'after' => [
-                'typo3/cms-backend/site-resolver',
+                'typo3/cms-frontend/tsfe',
             ],
         ],
     ]

@@ -22,6 +22,7 @@ use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 class ConsentManagerController extends ActionController {
 
     public static $CM_KEY = 'consentManagerKey';
+    public static $ASPECT_NAME = 'piwik.consent';
 
     public function consentManagerAction() {
         $extensionConfiguration = GeneralUtility::makeInstance(ExtensionConfiguration::class)
