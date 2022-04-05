@@ -1,0 +1,7 @@
+page {
+	1649152563 = USER
+	1649152563.userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+	1649152563.extensionName= PiwikConsentManager
+	1649152563.pluginName = PiwikConsentManager
+	1649152563.vendorName = MEDIENGARAGE
+}
