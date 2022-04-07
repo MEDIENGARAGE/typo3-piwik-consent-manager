@@ -12,6 +12,9 @@
             <trans-unit id="youtube_description" xml:space="preserve">
                 <source>Data privacy compliant embedded YouTube video.</source>
             </trans-unit>
+            <trans-unit id="youtube_embed_label" xml:space="preserve">
+                <source>Enter sources to embed YouTube video:</source>
+            </trans-unit>
 		</body>
 	</file>
 </xliff>

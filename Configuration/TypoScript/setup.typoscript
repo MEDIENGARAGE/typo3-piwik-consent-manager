@@ -1,12 +1,11 @@
 lib.contentElement {
-    templateRootPaths.200 = EXT:piwik_consent_manager//Resources/Private/Templates/
-    partialRootPaths.200 = EXT:piwik_consent_manager/Resources/Private/Partials/
-    layoutRootPaths.200 = EXT:piwik_consent_manager/Resources/Private/Layout/
+    templateRootPaths.1649330665 = EXT:piwik_consent_manager/Resources/Private/Templates/
+    partialRootPaths.1649330665 = EXT:piwik_consent_manager/Resources/Private/Partials/
+    layoutRootPaths.1649330665 = EXT:piwik_consent_manager/Resources/Private/Layout/
 }
 
-tt_content {
-    piwikconsentmanager_youtube =< lib.contentElement
-    piwikconsentmanager_youtube {
-        templateName = YouTube
-    }
+tt_content.piwikconsentmanager_youtube = COA_INT
+tt_content.piwikconsentmanager_youtube {
+    10 =< lib.contentElement
+    10.templateName = YouTube
 }

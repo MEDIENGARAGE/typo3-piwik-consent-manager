@@ -12,7 +12,12 @@
                 <target state="translated">YouTube</target>
             </trans-unit>
             <trans-unit id="youtube_description" xml:space="preserve">
-                <source>Datenschutzkonforme Einbettung eines YouTube Videos.</source>
+                <source>Data privacy compliant embedded YouTube video.</source>
+                <target>Datenschutzkonforme Einbettung eines YouTube Videos.</target>
+            </trans-unit>
+            <trans-unit id="youtube_embed_label" xml:space="preserve">
+                <source>Enter sources to embed YouTube video:</source>
+                <target>Sourcen zum Einbetten eines YouTube Videos einfügen:</target>
             </trans-unit>
 		</body>
 	</file>
