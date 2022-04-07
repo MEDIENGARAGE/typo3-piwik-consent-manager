@@ -1,0 +1,16 @@
+####################################
+#### NEW CONTENT ELEMENT WIZARD ####
+####################################
+mod.wizards.newContentElement.wizardItems.privacy {
+    elements {
+        youtube {
+            iconIdentifier = content-image
+            title = LLL:EXT:piwik_consent_manager/Resources/Private/Language/locallang.xlf:youtube
+            description = LLL:EXT:piwik_consent_manager/Resources/Private/Language/locallang.xlf:youtube_description
+            tt_content_defValues {
+                CType = piwikconsentmanager_youtube
+            }
+        }
+    }
+    show := addToList(youtube)
+}

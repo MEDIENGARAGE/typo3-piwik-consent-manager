@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2022-04-06T01:05:04Z" product-name="piwik_consent_manager">
+		<header/>
+		<body>
+			<trans-unit id="no_key_error" xml:space="preserve" approved="yes">
+				<source>No api key for piwik consent manager was found. It can be set under Settings module in the TYPO3 backend -> Configure extensions -> piwik_consent_manager -> Api Key</source>
+			    <target state="translated">Für den PIWIK Consent manager wurde kein Api Key gefunden. Im modul Einstellungen im TYPO3 Backend -> Configure extensions -> piwik_consent_manager -> kann der Api Key gesetzt werden.</target>
+			</trans-unit>
+			<trans-unit id="youtube" xml:space="preserve" approved="yes">
+                <source>YouTube</source>
+                <target state="translated">YouTube</target>
+            </trans-unit>
+            <trans-unit id="youtube_description" xml:space="preserve">
+                <source>Datenschutzkonforme Einbettung eines YouTube Videos.</source>
+            </trans-unit>
+		</body>
+	</file>
+</xliff>

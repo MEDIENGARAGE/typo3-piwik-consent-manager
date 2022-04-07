@@ -15,3 +15,7 @@ if (!defined('TYPO3_MODE')) {
         \MEDIENGARAGE\Piwikconsentmanager\Controller\ConsentManagerController::class => 'consentManager',
     )
 );
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
+    '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:piwik_consent_manager/Configuration/TsConfig/Page/ContentElement/All.tsconfig">'
+);

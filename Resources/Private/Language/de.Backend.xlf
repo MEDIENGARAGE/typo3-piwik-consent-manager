@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2022-04-06T09:11:39Z"
+          product-name="piwik_consent_manager">
+        <header/>
+        <body>
+            <trans-unit id="privacy" xml:space="preserve">
+                <source>Privacy</source>
+                <source>Datenschutz</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

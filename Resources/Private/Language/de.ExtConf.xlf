@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2022-04-05T11:13:04Z" product-name="piwik_consent_manager">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2022-04-05T11:13:04Z" product-name="piwik_consent_manager">
 		<header/>
 		<body>
 			<trans-unit id="consentManagerKey" xml:space="preserve">
-				<source>Api Key Description</source>
-				<target>Api Key Beschreibung</target>
+				<source>Consent Manager Key</source>
+				<target>Consent Manager Schlüssel</target>
 			</trans-unit>
 		</body>
 	</file>
