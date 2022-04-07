@@ -5,3 +5,9 @@ page {
 	1649152563.pluginName = PiwikConsentManager
 	1649152563.vendorName = MEDIENGARAGE
 }
+
+plugin.tx_piwikconsentmanager {
+	settings {
+		consentsAvailable = custom_consent, analytics
+	}
+}
