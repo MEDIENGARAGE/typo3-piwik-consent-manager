@@ -14,9 +14,14 @@ use MEDIENGARAGE\Piwikconsentmanager\Context\ConsentAspect;
 use TYPO3\CMS\Core\Context\Context;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
+/**
+ * Middleware to add consent cookie information into TYPO3 context in order to make it available for views.
+ */
 class SetConsents implements MiddlewareInterface
 {
     /**
+     * Get consent information from Cookie.
+     *
      * @param ServerRequestInterface  $request
      * @param RequestHandlerInterface $handler
      * @return ResponseInterface
@@ -25,7 +30,6 @@ class SetConsents implements MiddlewareInterface
      */
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
-        // Get consent information from Cookie.
         $extensionConfiguration = GeneralUtility::makeInstance(ExtensionConfiguration::class)
             ->get('piwik_consent_manager');
 

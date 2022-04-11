@@ -6,8 +6,8 @@ page {
 	1649152563.vendorName = MEDIENGARAGE
 }
 
-plugin.tx_piwikconsentmanager {
+plugin.tx_piwik_consent_manager {
 	settings {
-		consentsAvailable = custom_consent, analytics
+		consentsAvailable = analytics, ab_testing_and_personalization, conversion_tracking, marketing_automation, remarketing, user_feedback, custom_consent
 	}
 }

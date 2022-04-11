@@ -2,5 +2,5 @@
 #### CATEGORIES ####
 ####################
 mod.wizards.newContentElement.wizardItems {
-    privacy.header = LLL:EXT:piwik_consent_manager/Resources/Private/Language/Backend.xlf:privacy
+    privacy.header = LLL:EXT:piwik_consent_manager/Resources/Private/Language/locallang.xlf:privacy
 }

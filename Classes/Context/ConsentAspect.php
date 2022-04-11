@@ -26,7 +26,7 @@ class ConsentAspect implements AspectInterface
         $configurationManager = GeneralUtility::makeInstance(ConfigurationManager::class);
         $settings = $configurationManager->getConfiguration(
             ConfigurationManagerInterface::CONFIGURATION_TYPE_SETTINGS,
-            'piwikconsentmanager'
+            'piwik_consent_manager'
         );
 
         $consentsAvailable = GeneralUtility::trimExplode(',', $settings['consentsAvailable']);

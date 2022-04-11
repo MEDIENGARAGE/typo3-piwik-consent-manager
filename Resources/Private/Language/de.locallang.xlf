@@ -19,6 +19,54 @@
                 <source>Enter sources to embed YouTube video:</source>
                 <target>Sourcen zum Einbetten eines YouTube Videos einfügen:</target>
             </trans-unit>
+            <trans-unit id="consentManagerKey" xml:space="preserve">
+                <source>Consent Manager Key</source>
+                <target>Consent Manager Schlüssel</target>
+            </trans-unit>
+            <trans-unit id="piwikconsentmanager_youtube" xml:space="preserve">
+                <source>YouTube (PIWIK)</source>
+                <target>YouTube (PIWIK)</target>
+            </trans-unit>
+            <trans-unit id="privacy" xml:space="preserve">
+                <source>Privacy</source>
+                <target>Datenschutz</target>
+            </trans-unit>
+            <trans-unit id="consent_type_analytics" xml:space="preserve">
+                <source>Analytics</source>
+                <target>Analytics</target>
+            </trans-unit>
+            <trans-unit id="consent_type_ab_testing_and_personalization" xml:space="preserve">
+                <source>AB Testing and Personalization</source>
+                <target>AB Testing and Personalization</target>
+            </trans-unit>
+            <trans-unit id="consent_type_conversion_tracking" xml:space="preserve">
+                <source>Conversion Tracking</source>
+                <target>Conversion Tracking</target>
+            </trans-unit>
+            <trans-unit id="consent_type_marketing_automation" xml:space="preserve">
+                <source>Marketing Automation</source>
+                <target>Marketing Automation</target>
+            </trans-unit>
+            <trans-unit id="consent_type_remarketing" xml:space="preserve">
+                <source>Remarketing</source>
+                <target>Remarketing</target>
+            </trans-unit>
+            <trans-unit id="consent_type_user_feedback" xml:space="preserve">
+                <source>User feedback</source>
+                <target>User feedback</target>
+            </trans-unit>
+            <trans-unit id="consent_type_custom_consent" xml:space="preserve">
+                <source>Custom consent</source>
+                <target>Custom consent</target>
+            </trans-unit>
+            <trans-unit id="consent_type" xml:space="preserve">
+                <source>Consent Type</source>
+                <target>Consent Typ</target>
+            </trans-unit>
+            <trans-unit id="choose_consent_type" xml:space="preserve">
+                <source>Please choose a consent type.</source>
+                <target>Bitte wählen Sie einen Consent Typen.</target>
+            </trans-unit>
 		</body>
 	</file>
 </xliff>
