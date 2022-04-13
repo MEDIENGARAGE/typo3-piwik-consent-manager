@@ -3,16 +3,16 @@ if (!defined('TYPO3_MODE')) {
     die('Access denied.');
 }
 
-// TODO: remove from non-cachable
+// TODO: remove from non-cachable?
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
     'PiwikConsentManager',
-    'PiwikConsentManager',
+    'Pi1',
     array(
-        \MEDIENGARAGE\Piwikconsentmanager\Controller\ConsentManagerController::class => 'consentManager',
+        \MEDIENGARAGE\Piwikconsentmanager\Controller\ConsentManagerController::class => 'consentManager, privacyContentElements',
     ),
     // non-cacheable actions
     array(
-        \MEDIENGARAGE\Piwikconsentmanager\Controller\ConsentManagerController::class => 'consentManager',
+        \MEDIENGARAGE\Piwikconsentmanager\Controller\ConsentManagerController::class => 'consentManager, privacyContentElements'
     )
 );
 

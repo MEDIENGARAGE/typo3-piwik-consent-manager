@@ -14,7 +14,7 @@
 
 $GLOBALS['TCA']['tt_content']['types']['piwikconsentmanager_youtube'] = [
     'columnsOverrides' => [
-        'bullets_type' => [
+        'list_type' => [
             'label' => 'LLL:EXT:piwik_consent_manager/Resources/Private/Language/locallang.xlf:consent_type',
             'config' => [
                 'itemsProcFunc' => MEDIENGARAGE\Piwikconsentmanager\Utility\ConsentSelectItems::class . '->getConsentSelectItems',
@@ -24,7 +24,7 @@ $GLOBALS['TCA']['tt_content']['types']['piwikconsentmanager_youtube'] = [
     ],
     'showitem' => '
         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
-            bullets_type,
+            list_type,
             --palette--;;general,
             bodytext;LLL:EXT:piwik_consent_manager/Resources/Private/Language/locallang.xlf:youtube_embed_label,
         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,

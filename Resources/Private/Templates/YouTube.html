@@ -3,10 +3,14 @@
 
 <f:if condition="{pcm:getPropertyFromAspect(aspect: 'piwik.consent', property: 'custom_consent')}">
     <f:then>
-        {data.bodytext -> f:format.raw()}
+        <div id="{data.CType}-{data.pid}-{data.uid}-{data.colPos}">
+            {data.bodytext -> f:format.raw()}
+        </div>
     </f:then>
     <f:else>
-        PLACEHOLDER
+        <div id="{data.CType}-{data.pid}-{data.uid}-{data.colPos}">
+            PLACEHOLDER
+        </div>
     </f:else>
 </f:if>
 

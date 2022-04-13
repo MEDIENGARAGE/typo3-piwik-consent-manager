@@ -1,0 +1,2 @@
+# cat= PIWIK Consent Manager; type=string; label=Consent Manager: Exclude from PIDs
+tx_piwik_consent_manager.excludeConsentManagerFromPid = 74
