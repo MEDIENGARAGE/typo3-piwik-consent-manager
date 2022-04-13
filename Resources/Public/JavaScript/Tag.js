@@ -9,9 +9,12 @@ const headers = {
 
 fetch(url, {
     method: 'get',
+    credentials: 'same-origin',
     headers: headers
 }).then(response => {
-    console.log(response);
+    response.json().then((data) => {
+        console.log(data);
+    });
 }).catch(err => {
     console.warn('Something went wrong.', err);
 });

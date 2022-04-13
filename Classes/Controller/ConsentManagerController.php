@@ -32,13 +32,6 @@ class ConsentManagerController extends ActionController
     public static $CM_KEY = 'consentManagerKey';
     public static $ASPECT_NAME = 'piwik.consent';
 
-//    private $pageRepository;
-//
-//    public function __construct(PageRepository $pageRepository)
-//    {
-//        $this->pageRepository = $pageRepository;
-//    }
-
     /**
      * Displays the consent manager.
      *
@@ -90,12 +83,12 @@ class ConsentManagerController extends ActionController
             // TODO: template must be dynamic.
             $view->setTemplate('YouTube.html');
 
-            $view->assign('contentElements', $rawCes);
+            $view->assign('data', $ce);
 
             // Push rendered content element.
-            $renderedCes[] = $view->render();
+            $renderedCes[] = trim($view->render());
         }
 
-        return $renderedCes;
+        return json_encode($renderedCes);
     }
 }
