@@ -10,8 +10,8 @@ page {
 #	page.1649152563 >
 #[global]
 
-ajaxContent = PAGE
-ajaxContent {
+ajaxPiwikConsentManager = PAGE
+ajaxPiwikConsentManager {
 	typeNum = 1649152563
 	10 = USER
 	10.userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run

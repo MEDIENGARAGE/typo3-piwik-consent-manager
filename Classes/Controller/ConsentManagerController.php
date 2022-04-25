@@ -28,9 +28,13 @@ use TYPO3\CMS\Fluid\View\StandaloneView;
  */
 class ConsentManagerController extends ActionController
 {
-
     public static $CM_KEY = 'consentManagerKey';
     public static $ASPECT_NAME = 'piwik.consent';
+
+    // Keys are content types and values are templates.
+    private $cTypeToTemplateMapping = [
+        'piwikconsentmanager_youtube' => 'YouTube'
+    ];
 
     /**
      * Displays the consent manager.
@@ -47,12 +51,12 @@ class ConsentManagerController extends ActionController
         $this->view->assign(self::$CM_KEY, $extensionConfiguration[self::$CM_KEY]);
     }
 
+    /**
+     * @return false|string
+     */
     public function privacyContentElementsAction()
     {
         $pageId = $GLOBALS['TSFE']->id;
-
-        // TODO: must be all privacy ctypes!
-        $cType = ['piwikconsentmanager_youtube'];
 
         /** @var QueryBuilder $qb */
         $qb = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tt_content');
@@ -65,15 +69,17 @@ class ConsentManagerController extends ActionController
                     $qb->expr()
                         ->eq('pid', $qb->createNamedParameter($pageId, Connection::PARAM_INT)),
                     $qb->expr()
-                        ->in('CType', $qb->createNamedParameter($cType, ConnectionAlias::PARAM_STR_ARRAY))
+                        ->in('CType', $qb->createNamedParameter(
+                            array_keys($this->cTypeToTemplateMapping),
+                            ConnectionAlias::PARAM_STR_ARRAY)
+                        )
                 )
             )
             ->execute();
 
-        $rawCes = $statement->fetchAll();
         $renderedCes = [];
 
-        foreach ($rawCes as $ce) {
+        foreach ($statement->fetchAll() as $ce) {
             /** @var StandaloneView $view */
             $view = GeneralUtility::makeInstance(StandaloneView::class);
 
