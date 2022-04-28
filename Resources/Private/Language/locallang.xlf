@@ -18,6 +18,9 @@
             <trans-unit id="consentManagerKey" xml:space="preserve">
                 <source>Consent Manager Key</source>
             </trans-unit>
+            <trans-unit id="consentManagerURL" xml:space="preserve">
+                <source>Consent Manager URL</source>
+            </trans-unit>
             <trans-unit id="piwikconsentmanager_youtube" xml:space="preserve">
                 <source>YouTube (PIWIK)</source>
             </trans-unit>
