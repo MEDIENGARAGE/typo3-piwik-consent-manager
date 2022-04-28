@@ -67,6 +67,10 @@
                 <source>Please choose a consent type.</source>
                 <target>Bitte wählen Sie einen Consent Typen.</target>
             </trans-unit>
-		</body>
+            <trans-unit id="preview_image" xml:space="preserve">
+                <source>Preview image</source>
+                <target>Vorschaubild</target>
+            </trans-unit>
+        </body>
 	</file>
 </xliff>

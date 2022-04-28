@@ -54,6 +54,9 @@
             <trans-unit id="choose_consent_type" xml:space="preserve">
                 <source>Please choose a consent type.</source>
             </trans-unit>
+            <trans-unit id="preview_image" xml:space="preserve">
+                <source>Preview image</source>
+            </trans-unit>
 		</body>
 	</file>
 </xliff>

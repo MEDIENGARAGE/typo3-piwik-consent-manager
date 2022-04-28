@@ -8,8 +8,22 @@
         </div>
     </f:then>
     <f:else>
-        <div id="{data.CType}-{data.pid}-{data.uid}-{data.colPos}">
-            PLACEHOLDER
+        <div id="{data.CType}-{data.pid}-{data.uid}-{data.colPos}" class="place-holder">
+            <f:if condition="{images}">
+                <f:then>
+                    <f:comment>Only accept one (first) image</f:comment>
+                    <f:for as="image" each="{images}" iteration="it">
+                        <f:if condition="{it.isFirst}">
+                            <f:image image="{image}"/>
+                            <p>{image.properties.title}</p>
+                        </f:if>
+                    </f:for>
+                </f:then>
+                <f:else>
+                    <f:image src="{settings.defaultPlaceholderImage}" absolute="1"/>
+                    <p>To see the video, please accept the privacy policy</p>
+                </f:else>
+            </f:if>
         </div>
     </f:else>
 </f:if>

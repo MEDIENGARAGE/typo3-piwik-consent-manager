@@ -29,6 +29,7 @@ use TYPO3\CMS\Fluid\View\StandaloneView;
 class ConsentManagerController extends ActionController
 {
     public static $CM_KEY = 'consentManagerKey';
+    public static $CM_URL = 'consentManagerURL';
     public static $ASPECT_NAME = 'piwik.consent';
 
     // Keys are content types and values are templates.
@@ -49,6 +50,7 @@ class ConsentManagerController extends ActionController
             ->get('piwik_consent_manager');
 
         $this->view->assign(self::$CM_KEY, $extensionConfiguration[self::$CM_KEY]);
+        $this->view->assign(self::$CM_URL, $extensionConfiguration[self::$CM_URL]);
     }
 
     /**

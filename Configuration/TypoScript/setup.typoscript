@@ -8,4 +8,16 @@ tt_content.piwikconsentmanager_youtube = COA_INT
 tt_content.piwikconsentmanager_youtube {
     10 =< lib.contentElement
     10.templateName = YouTube
+    10.settings {
+        defaultPlaceholderImage = {$tx_piwik_consent_manager.defaultPlaceholderImage}
+    }
+    10 {
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+            10 {
+                references.fieldName = image
+                as = images
+            }
+        }
+    }
 }

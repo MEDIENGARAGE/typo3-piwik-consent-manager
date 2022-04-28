@@ -33,7 +33,8 @@ class ConsentAspect implements AspectInterface
 
         foreach ($consentsAvailable as $consent) {
             // TODO: Instead of not equals -1 better equals 1 or whatever positiv value is
-            $this->consents[$consent] = !empty($consents[$consent]) && $consents[$consent]['status'] !== -1;
+            // TASK: Changed it to 0
+            $this->consents[$consent] = !empty($consents[$consent]) && $consents[$consent]['status'] !== 0;
         }
     }
 

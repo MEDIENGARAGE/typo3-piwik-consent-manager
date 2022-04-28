@@ -21,10 +21,14 @@ $GLOBALS['TCA']['tt_content']['types']['piwikconsentmanager_youtube'] = [
                 'default' => 'custom_consent'
             ]
         ],
+        'image' => [
+            'label' => 'LLL:EXT:piwik_consent_manager/Resources/Private/Language/locallang.xlf:preview_image',
+        ]
     ],
     'showitem' => '
         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
             list_type,
+            image,
             --palette--;;general,
             bodytext;LLL:EXT:piwik_consent_manager/Resources/Private/Language/locallang.xlf:youtube_embed_label,
         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
