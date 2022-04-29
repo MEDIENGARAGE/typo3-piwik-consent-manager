@@ -1,6 +1,8 @@
 {namespace pcm=MEDIENGARAGE\Piwikconsentmanager\ViewHelpers}
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-
+<f:section name="HeaderAssets">
+    <link rel="stylesheet" href="{f:uri.resource(path: 'Css/style.css', extensionName: 'PiwikConsentManager')}"/>
+</f:section>
 <f:if condition="{pcm:getPropertyFromAspect(aspect: 'piwik.consent', property: '{data.list_type}')}">
     <f:then>
         <div id="{data.CType}-{data.pid}-{data.uid}-{data.colPos}">
@@ -11,17 +13,24 @@
         <div id="{data.CType}-{data.pid}-{data.uid}-{data.colPos}" class="place-holder">
             <f:if condition="{images}">
                 <f:then>
+                    <f:comment>Custom placeholder image</f:comment>
                     <f:comment>Only accept one (first) image</f:comment>
                     <f:for as="image" each="{images}" iteration="it">
                         <f:if condition="{it.isFirst}">
-                            <f:image image="{image}"/>
-                            <p>{image.properties.title}</p>
+                            <div class="placeholder-image">
+                                <p>{image.properties.title}</p>
+                                <f:image image="{image}" class="img-fluid" alt="Placeholder image"/>
+                            </div>
                         </f:if>
                     </f:for>
                 </f:then>
                 <f:else>
-                    <f:image src="{settings.defaultPlaceholderImage}" absolute="1"/>
-                    <p>To see the video, please accept the privacy policy</p>
+                    <f:comment>Default placeholder image</f:comment>
+                    <div class="placeholder-image">
+                        <p>To activate the video, please accept the privacy policy</p>
+                        <f:image src="{settings.defaultPlaceholderImage}" absolute="1" class="img-fluid" alt="Placeholder image"/>
+                    </div>
+
                 </f:else>
             </f:if>
         </div>

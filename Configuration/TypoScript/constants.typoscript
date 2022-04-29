@@ -1,4 +1,4 @@
 # cat= PIWIK Consent Manager; type=string; label=Consent Manager: Exclude from PIDs
 tx_piwik_consent_manager.excludeConsentManagerFromPid = 74
 # cat= PIWIK Consent Manager; type=string; label=Consent Manager: Default placeholder image
-tx_piwik_consent_manager.defaultPlaceholderImage = EXT:piwik_consent_manager/Resources/Public/Images/consentManagerPlaceholder.png
+tx_piwik_consent_manager.defaultPlaceholderImage = EXT:piwik_consent_manager/Resources/Public/Images/consentManagerPlaceholder.jpg

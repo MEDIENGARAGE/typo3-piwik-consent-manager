@@ -20,6 +20,7 @@ class ConsentAspect implements AspectInterface
 
     /**
      * @param array $consents
+     * @throws \TYPO3\CMS\Extbase\Configuration\Exception\InvalidConfigurationTypeException
      */
     public function __construct(array $consents = [])
     {
