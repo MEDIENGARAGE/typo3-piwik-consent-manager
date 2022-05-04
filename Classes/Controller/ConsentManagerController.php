@@ -54,6 +54,9 @@ class ConsentManagerController extends ActionController
     }
 
     /**
+     * This action is used when content elements are fetched via ajax instead a full page reload after any consent was
+     * changed.
+     *
      * @return false|string
      */
     public function privacyContentElementsAction()
