@@ -7,6 +7,7 @@ use TYPO3\CMS\Core\Context\Exception\AspectPropertyNotFoundException;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManager;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
+use TYPO3\CMS\Extbase\Configuration\Exception\InvalidConfigurationTypeException;
 
 /**
  * The aspect contains information about a visitor's data privacy consents
@@ -20,7 +21,7 @@ class ConsentAspect implements AspectInterface
 
     /**
      * @param array $consents
-     * @throws \TYPO3\CMS\Extbase\Configuration\Exception\InvalidConfigurationTypeException
+     * @throws InvalidConfigurationTypeException
      */
     public function __construct(array $consents = [])
     {
@@ -33,9 +34,7 @@ class ConsentAspect implements AspectInterface
         $consentsAvailable = GeneralUtility::trimExplode(',', $settings['consentsAvailable']);
 
         foreach ($consentsAvailable as $consent) {
-            // TODO: Instead of not equals -1 better equals 1 or whatever positiv value is
-            // TASK: Changed it to 0
-            $this->consents[$consent] = !empty($consents[$consent]) && $consents[$consent]['status'] !== 0;
+            $this->consents[$consent] = !empty($consents[$consent]) && $consents[$consent]['status'] === 1;
         }
     }
 

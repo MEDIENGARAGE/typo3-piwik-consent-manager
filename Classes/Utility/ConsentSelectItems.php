@@ -11,7 +11,8 @@ use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 class ConsentSelectItems
 {
     /**
-     *
+     * Provides the options for the select dropdown within a content element.
+     * The consent type a certain content element reacts to can be chosen whic
      *
      * @param array $configuration Current field configuration
      * @throws InvalidConfigurationTypeException
