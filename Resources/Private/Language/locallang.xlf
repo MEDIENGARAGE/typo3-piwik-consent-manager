@@ -9,8 +9,14 @@
 			<trans-unit id="youtube" xml:space="preserve">
                 <source>YouTube</source>
             </trans-unit>
+            <trans-unit id="generic" xml:space="preserve">
+                <source>Generic</source>
+            </trans-unit>
             <trans-unit id="youtube_description" xml:space="preserve">
                 <source>Data privacy compliant embedded YouTube video.</source>
+            </trans-unit>
+            <trans-unit id="generic_description" xml:space="preserve">
+                <source>Data privacy compliant embedded Generic content.</source>
             </trans-unit>
             <trans-unit id="youtube_embed_label" xml:space="preserve">
                 <source>Enter sources to embed YouTube video:</source>
@@ -23,6 +29,9 @@
             </trans-unit>
             <trans-unit id="piwikconsentmanager_youtube" xml:space="preserve">
                 <source>YouTube (PIWIK)</source>
+            </trans-unit>
+            <trans-unit id="piwikconsentmanager_generic" xml:space="preserve">
+                <source>Generic content (PIWIK)</source>
             </trans-unit>
             <trans-unit id="privacy" xml:space="preserve">
                 <source>Privacy</source>

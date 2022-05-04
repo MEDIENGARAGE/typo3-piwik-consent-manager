@@ -1,0 +1,16 @@
+####################################
+#### NEW CONTENT ELEMENT WIZARD ####
+####################################
+mod.wizards.newContentElement.wizardItems.privacy {
+    elements {
+        generic {
+            iconIdentifier = content-image
+            title = LLL:EXT:piwik_consent_manager/Resources/Private/Language/locallang.xlf:generic
+            description = LLL:EXT:piwik_consent_manager/Resources/Private/Language/locallang.xlf:generic_description
+            tt_content_defValues {
+                CType = piwikconsentmanager_generic
+            }
+        }
+    }
+    show := addToList(generic)
+}

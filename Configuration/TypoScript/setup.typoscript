@@ -1,12 +1,15 @@
-lib.contentElement {
-    templateRootPaths.1649330665 = EXT:piwik_consent_manager/Resources/Private/Templates/
-    partialRootPaths.1649330665 = EXT:piwik_consent_manager/Resources/Private/Partials/
-    layoutRootPaths.1649330665 = EXT:piwik_consent_manager/Resources/Private/Layout/
-}
-
 tt_content.piwikconsentmanager_youtube = COA_INT
 tt_content.piwikconsentmanager_youtube {
     10 =< lib.contentElement
+    10.templateRootPaths {
+        1 = EXT:piwik_consent_manager/Resources/Private/Templates/
+    }
+    10.partialRootPaths {
+        1 = EXT:piwik_consent_manager/Resources/Private/Partials/
+    }
+    10.layoutRootPaths {
+        1 = EXT:piwik_consent_manager/Resources/Private/Layout/
+    }
     10.templateName = YouTube
     10.settings {
         defaultPlaceholderImage = {$tx_piwik_consent_manager.defaultPlaceholderImage}
@@ -20,4 +23,9 @@ tt_content.piwikconsentmanager_youtube {
             }
         }
     }
+}
+
+tt_content.piwikconsentmanager_generic =< tt_content.piwikconsentmanager_youtube
+tt_content.piwikconsentmanager_generic {
+    10.templateName = Generic
 }
