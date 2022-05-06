@@ -41,9 +41,9 @@ $GLOBALS['TCA']['tt_content']['types']['piwikconsentmanager_youtube'] = [
     ],
     'showitem' => '
         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:general,
+        --palette--;;general,
             list_type,
             image,
-            --palette--;;general,
             bodytext;LLL:EXT:piwik_consent_manager/Resources/Private/Language/locallang.xlf:youtube_embed_label,
         --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
             --palette--;;language,

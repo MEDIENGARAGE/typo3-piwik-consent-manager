@@ -17,16 +17,21 @@
                     <f:comment>Only accept one (first) image</f:comment>
                     <f:for as="image" each="{images}" iteration="it">
                         <f:if condition="{it.isFirst}">
-                            <div class="placeholder-image">
-                                <p>{image.properties.title}</p>
-                                <f:image image="{image}" class="img-fluid" alt="Placeholder image"/>
+                            <div class="container">
+                                {image.description -> f:format.html()}
+                                <div class="placeholder-image">
+                                    <f:if condition="{image.properties.title}">
+                                        <p>{image.properties.title}</p>
+                                    </f:if>
+                                    <f:image image="{image}" class="img-fluid" alt="Placeholder image"/>
+                                </div>
                             </div>
                         </f:if>
                     </f:for>
                 </f:then>
                 <f:else>
                     <f:comment>Default placeholder image</f:comment>
-                    <div class="placeholder-image">
+                    <div class="placeholder-image container">
                         <p>To activate the video, please accept the privacy policy</p>
                         <f:image src="{settings.defaultPlaceholderImage}" absolute="1" class="img-fluid" alt="Placeholder image"/>
                     </div>
