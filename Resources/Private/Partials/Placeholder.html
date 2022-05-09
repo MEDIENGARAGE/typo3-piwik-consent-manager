@@ -1,0 +1,60 @@
+{namespace pcm=MEDIENGARAGE\Piwikconsentmanager\ViewHelpers}
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <div id="{data.CType}-{data.pid}-{data.uid}-{data.colPos}" class="place-holder">
+        <f:if condition="{images}">
+            <f:then>
+                <f:comment>Custom placeholder image</f:comment>
+                <f:comment>Only accept one (first) image</f:comment>
+                <f:for as="image" each="{images}" iteration="it">
+                    <f:if condition="{it.isFirst}">
+                        <div class="container">
+                            <div class="placeholder-image">
+                                <div class="placeholder-description">
+                                    <f:if condition="{image.properties.title}">
+                                        <h2>
+                                            {image.properties.title}
+                                        </h2>
+                                    </f:if>
+                                    <p>
+                                        {image.description -> f:format.html()}
+                                        <div id="ppms_cm_privacy_settings" data-editor-centralize="true"
+                                             data-main-container="true" data-root="true">
+                                            <div data-disable-select='true'>
+                                                <button class="btn btn-primary" id="ppms_cm_privacy_settings_button">Datenschutzeinstellungen
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </p>
+                                </div>
+                                <f:image maxWidth="{data.imagewidth}" image="{image}" class="img-fluid"
+                                         alt="Placeholder image"/>
+                            </div>
+                        </div>
+                    </f:if>
+                </f:for>
+            </f:then>
+            <f:else>
+                <f:comment>Default placeholder image</f:comment>
+                <div class="container">
+                    <div class="placeholder-image">
+                        <div class="placeholder-description">
+                            <p>
+                                <f:translate key="default_placeholder_description" extensionName="piwik_consent_manager"/>
+                                <div id="ppms_cm_privacy_settings" data-editor-centralize="true"
+                                     data-main-container="true" data-root="true">
+                                    <div data-disable-select='true'>
+                                        <button class="btn btn-primary" id="ppms_cm_privacy_settings_button">Datenschutzeinstellungen
+                                        </button>
+                                    </div>
+                                </div>
+                            </p>
+                        </div>
+                        <f:image maxWidth="{settings.defaultPlaceholderImage.maxWidth}"
+                                 src="{settings.defaultPlaceholderImage.image}" absolute="1" class="img-fluid"
+                                 alt="Placeholder image"/>
+                    </div>
+                </div>
+            </f:else>
+        </f:if>
+    </div>
+</html>

@@ -10,29 +10,7 @@
             </div>
         </f:then>
         <f:else>
-            <div id="{data.CType}-{data.pid}-{data.uid}-{data.colPos}" class="place-holder">
-                <f:if condition="{images}">
-                    <f:then>
-                        <f:comment>Custom placeholder image</f:comment>
-                        <f:comment>Only accept one (first) image</f:comment>
-                        <f:for as="image" each="{images}" iteration="it">
-                            <f:if condition="{it.isFirst}">
-                                <div class="placeholder-image">
-                                    <p>{image.properties.title}</p>
-                                    <f:image image="{image}" class="img-fluid" alt="Placeholder image"/>
-                                </div>
-                            </f:if>
-                        </f:for>
-                    </f:then>
-                    <f:else>
-                        <f:comment>Default placeholder image</f:comment>
-                        <div class="placeholder-image container">
-                            <p>To activate the content, please accept the privacy policy</p>
-                            <f:image src="{settings.defaultPlaceholderImage}" absolute="1" class="img-fluid" alt="Placeholder image"/>
-                        </div>
-                    </f:else>
-                </f:if>
-            </div>
+            <f:render partial="Placeholder" arguments="{_all}" />
         </f:else>
     </f:if>
 </html>

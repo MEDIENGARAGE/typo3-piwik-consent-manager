@@ -1,13 +1,30 @@
-.place-holder .placeholder-image {
-    position: relative;
+@media (min-width: 768px) {
+    .place-holder .placeholder-image {
+        position: relative;
+        max-width: fit-content
+    }
+    .place-holder .placeholder-image .placeholder-description {
+        position: absolute;
+        /*left: 50%;*/
+        /*top: 50%;*/
+        /*transform: translate(-50%,-50%);*/
+        background: rgba(0,0,0,0.5);
+        font-size: 1.5rem;
+        padding: 10px;
+        color: white;
+    }
+
+    .place-holder .placeholder-image p {
+        font-size: 1rem;
+    }
 }
-.place-holder .placeholder-image p {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
+
+.place-holder .placeholder-image h2 {
+    color: #ffffff;
+}
+
+.placeholder-description {
     background: rgba(0,0,0,0.5);
-    font-size: 1.5rem;
     padding: 10px;
     color: white;
 }

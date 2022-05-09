@@ -33,6 +33,9 @@
             <trans-unit id="piwikconsentmanager_generic" xml:space="preserve">
                 <source>Generic content (PIWIK)</source>
             </trans-unit>
+            <trans-unit id="default_placeholder_description" xml:space="preserve">
+                <source>To activate the content, please accept the related privacy policy.</source>
+            </trans-unit>
             <trans-unit id="privacy" xml:space="preserve">
                 <source>Privacy</source>
             </trans-unit>

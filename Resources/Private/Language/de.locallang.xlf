@@ -71,6 +71,10 @@
                 <source>Preview image</source>
                 <target>Vorschaubild</target>
             </trans-unit>
+            <trans-unit id="default_placeholder_description" xml:space="preserve">
+                <source>To activate the content, please accept the related privacy policy.</source>
+                <target>Akzeptieren sie bitte die Datenschutzbestimmung um die Inhalte zu aktivieren</target>
+            </trans-unit>
         </body>
 	</file>
 </xliff>

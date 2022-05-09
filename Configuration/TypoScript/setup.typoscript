@@ -12,7 +12,8 @@ tt_content.piwikconsentmanager_youtube {
     }
     10.templateName = YouTube
     10.settings {
-        defaultPlaceholderImage = {$tx_piwik_consent_manager.defaultPlaceholderImage}
+        defaultPlaceholderImage.image = {$tx_piwik_consent_manager.defaultPlaceholderImage.image}
+        defaultPlaceholderImage.maxWidth = {$tx_piwik_consent_manager.defaultPlaceholderImage.maxWidth}
     }
     10 {
         dataProcessing {

@@ -10,6 +10,6 @@ defined('TYPO3_MODE') || die();
 // Content Elements
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerPageTSConfigFile(
     'piwik_consent_manager',
-    'Configuration/TsConfig/Page/ContentElement/All.tsconfig',
+    'Configuration/TsConfig/Page/All.tsconfig',
     'PIWIK Consent Manager Content Elements'
 );
