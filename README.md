@@ -1,5 +1,5 @@
 <a href="https://mdngrg.de/">
-    <img src="https://mdngrg.de/fileadmin/Logo-visitenkarten.png" alt="Mediengarage Logo" title="Mediengarage" align="right" height="75" />
+    <img src="https://user-images.githubusercontent.com/4928098/172920747-345acba4-9a12-4d3a-a566-49b5bbb9016b.png" alt="Mediengarage Logo" title="Mediengarage" align="right" height="75" />
 </a>
 
 # PIWIK Consent Manager TYPO3 extension
