@@ -4,10 +4,20 @@
 
 # PIWIK Consent Manager TYPO3 extension
 
-GDPR compliant TYPO3 content elements which work great with PIWIK Consent Manager.
+PIWIK Consent Manager integration in order to make TYPO3 content elements GDPR compliant.
 
+1. [What does it do?](#-what-does-it-do)
 1. [Installation](#-installation)
 1. [Quick Start](#-quick-start)  
+
+## 🤔 What does it do?
+
+Instead of privacy harming content a placeholder will be displayed to the user:
+<img width="700" alt="Bildschirmfoto 2022-06-09 um 21 56 47" src="https://user-images.githubusercontent.com/4928098/172933972-57d0ba1b-1f8a-4dbc-9ee2-48bd5ca143d4.png">
+
+
+Only when the user gives its consent on the PIWIK Consent Manager the page is reloaded and the actual content will be shown.
+<img width="700" alt="Bildschirmfoto 2022-06-09 um 21 57 13" src="https://user-images.githubusercontent.com/4928098/172934095-840e8937-127a-4758-a0a8-051467a952c4.png">
 
 ## 📦 Installation
 
