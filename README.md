@@ -11,7 +11,7 @@ GDPR compliant TYPO3 content elements which work great with PIWIK Consent Manage
 - **Composer**
 
     ```shell
-    composer req mediengarage/piwik-consent-manager:~0.0
+    composer req mediengarage/piwik-consent-manager:~0.1
     ```
 - **Non Composer**
 
