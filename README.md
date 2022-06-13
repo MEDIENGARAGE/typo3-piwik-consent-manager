@@ -8,7 +8,8 @@ PIWIK Consent Manager integration in order to make TYPO3 content elements GDPR c
 
 1. [What does it do?](#-what-does-it-do)
 1. [Installation](#-installation)
-1. [Quick Start](#-quick-start)  
+1. [Quick Start](#-quick-start)
+2. [TypoScript Condition](#-custom-typoscript-condition)
 
 ## 🤔 What does it do?
 
