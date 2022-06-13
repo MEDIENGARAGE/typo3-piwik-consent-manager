@@ -54,7 +54,7 @@ In order to have a basic website for presentation purposes the quick start guide
 1. Create a new content element anywhere on the page and choose YouTube from the new privacy tab:
     <img width="700" alt="new_content_element" src="https://user-images.githubusercontent.com/4928098/172922614-d0fd3aa4-d9df-471f-9dd0-a5f5a57cf79f.png">
 
-1. Paste the embed markup into text area and choose a consent type to which the element should react. React means it will be displayed when the user gives its consent on that type. A placeholder image can be set in the image tab.
+1. Paste the embed markup into text area and choose a consent type to which the element should react. React means it will be displayed when the user gives its consent on that type. The default placeholder image can be overwritten on a per content element basis in the image tab.
     <img width="700" alt="yt_content_element" src="https://user-images.githubusercontent.com/4928098/172923497-a71517cb-1df4-431f-81e6-86b95b08bc70.png">
 
 1. Login to your [PIWIK Pro](https://piwik.pro) account and navigate to Menu -> Tag Manager. Create an asynchronous tag for the chosen consent type (Custom Consent in this example) in order to reload the page when a consent was sent. Don't forget to save and publish (or debug to test on production system).
@@ -76,3 +76,8 @@ page.includeJSFooter {
 }
 [GLOBAL]
 ```
+
+## 🛣 Roadmap
+
+- We're currently working on a solution that works using ajax instead reloading the complete page.
+- The readme is clearly under construction 🙂
