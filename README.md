@@ -63,3 +63,15 @@ In order to have a basic website for presentation purposes the quick start guide
     </script>
     ```
     <img width="700" alt="piwik_tag" src="https://user-images.githubusercontent.com/4928098/172932884-75a99252-6263-438a-b7ee-0f29120c2497.png">
+
+## 🤓 Custom TypoScript Condition
+
+In order to e.g. embed JavaScript based on whether a consent is set or not a custom TypoScript condition can be used.
+
+```
+[ConsentAspect('custom_consent')]
+page.includeJSFooter {
+  foo = EXT:bar/Resources/Public/JavaScript/script.js
+}
+[GLOBAL]
+```
