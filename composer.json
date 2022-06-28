@@ -2,7 +2,7 @@
     "name": "mediengarage/piwik-consent-manager",
     "type": "typo3-cms-extension",
     "description": "",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "authors": [
         {
             "name": "Florian Fassing",
@@ -15,7 +15,7 @@
     ],
     "license": "GPL-2.0-or-later",
     "require": {
-        "typo3/cms-core": "^10.4"
+        "typo3/cms-core": "^10.4 || ^11.5"
     },
     "require-dev": {
         "typo3/testing-framework": "^6.8"
