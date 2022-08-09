@@ -30,3 +30,10 @@ tt_content.piwikconsentmanager_generic =< tt_content.piwikconsentmanager_youtube
 tt_content.piwikconsentmanager_generic {
     10.templateName = Generic
 }
+
+plugin.tx_piwik_consent_manager {
+    settings {
+        consentManagerKey = {$tx_piwik_consent_manager.consentManagerKey}
+        consentManagerURL = {$tx_piwik_consent_manager.consentManagerURL}
+    }
+}

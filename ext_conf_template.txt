@@ -1,4 +1,5 @@
+# Moved to constants
 # cat=basic; type=string; label=LLL:EXT:piwik_consent_manager/Resources/Private/Language/locallang.xlf:consentManagerKey
-consentManagerKey =
+# consentManagerKey =
 # cat=basic; type=string; label=LLL:EXT:piwik_consent_manager/Resources/Private/Language/locallang.xlf:consentManagerURL
-consentManagerURL =
+# consentManagerURL =

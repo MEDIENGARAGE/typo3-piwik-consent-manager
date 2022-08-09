@@ -11,6 +11,8 @@ use TYPO3\CMS\Core\Database\Connection;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Configuration\ConfigurationManager;
+use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use TYPO3\CMS\Fluid\View\StandaloneView;
 
@@ -46,11 +48,13 @@ class ConsentManagerController extends ActionController
      */
     public function consentManagerAction()
     {
-        $extensionConfiguration = GeneralUtility::makeInstance(ExtensionConfiguration::class)
-            ->get('piwik_consent_manager');
-
-        $this->view->assign(self::$CM_KEY, $extensionConfiguration[self::$CM_KEY]);
-        $this->view->assign(self::$CM_URL, $extensionConfiguration[self::$CM_URL]);
+        $configurationManager = GeneralUtility::makeInstance(ConfigurationManager::class);
+        $settings = $configurationManager->getConfiguration(
+            ConfigurationManagerInterface::CONFIGURATION_TYPE_SETTINGS,
+            'piwik_consent_manager'
+        );
+        $this->view->assign(self::$CM_KEY, $settings[self::$CM_KEY]);
+        $this->view->assign(self::$CM_URL, $settings[self::$CM_URL]);
     }
 
     /**
