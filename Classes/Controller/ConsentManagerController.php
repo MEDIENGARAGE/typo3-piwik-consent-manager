@@ -10,6 +10,7 @@ use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\Database\Connection;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
+use TYPO3\CMS\Core\Http\ServerRequest;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManager;
 use TYPO3\CMS\Extbase\Configuration\ConfigurationManagerInterface;
@@ -53,6 +54,20 @@ class ConsentManagerController extends ActionController
             ConfigurationManagerInterface::CONFIGURATION_TYPE_SETTINGS,
             'piwik_consent_manager'
         );
+
+        $currentPage = $GLOBALS['TSFE']->id;
+        $hideOnPages = explode(',', $settings['hideOnPages']);
+
+        /** @var ServerRequest $request */
+        $request = $GLOBALS['TYPO3_REQUEST'];
+        $params = $request->getQueryParams();
+
+        if ((array_key_exists('hide_on_page', $params) && (int) $params['hide_on_page'] === 0)) {
+            $this->view->assign('hideOnPage', 0);
+        } elseif (in_array($currentPage, $hideOnPages, false)) {
+            $this->view->assign('hideOnPage', 1);
+        }
+
         $this->view->assign(self::$CM_KEY, $settings[self::$CM_KEY]);
         $this->view->assign(self::$CM_URL, $settings[self::$CM_URL]);
     }

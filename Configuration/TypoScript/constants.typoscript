@@ -8,3 +8,5 @@ tx_piwik_consent_manager.defaultPlaceholderImage.maxWidth = 500
 tx_piwik_consent_manager.consentManagerKey =
 # cat=PIWIK Consent Manager; type=string; label=LLL:EXT:piwik_consent_manager/Resources/Private/Language/locallang.xlf:consentManagerURL
 tx_piwik_consent_manager.consentManagerURL =
+# cat=PIWIK Consent Manager; type=string; label=LLL:EXT:piwik_consent_manager/Resources/Private/Language/locallang.xlf:hideOnPages
+tx_piwik_consent_manager.hideOnPages =

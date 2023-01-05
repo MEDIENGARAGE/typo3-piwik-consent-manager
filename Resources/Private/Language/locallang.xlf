@@ -69,6 +69,9 @@
             <trans-unit id="preview_image" xml:space="preserve">
                 <source>Preview image</source>
             </trans-unit>
+            <trans-unit id="hideOnPages" xml:space="preserve">
+                <source>Page ID's where to disable Modal on</source>
+            </trans-unit>
 		</body>
 	</file>
 </xliff>

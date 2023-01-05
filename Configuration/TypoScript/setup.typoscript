@@ -35,5 +35,7 @@ plugin.tx_piwik_consent_manager {
     settings {
         consentManagerKey = {$tx_piwik_consent_manager.consentManagerKey}
         consentManagerURL = {$tx_piwik_consent_manager.consentManagerURL}
+        # Page IDs (comma separated) e.g. from Imprint
+        hideOnPages = {$tx_piwik_consent_manager.hideOnPages}
     }
 }

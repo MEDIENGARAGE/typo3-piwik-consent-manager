@@ -75,6 +75,10 @@
                 <source>To activate the content, please accept the related privacy policy.</source>
                 <target>Akzeptieren sie bitte die Datenschutzbestimmung um die Inhalte zu aktivieren</target>
             </trans-unit>
+            <trans-unit id="hideOnPages" xml:space="preserve">
+                <source>Page ID's where to disable Modal on</source>
+                <target>Seiten ID's wo das Modal deaktiviert werden soll</target>
+            </trans-unit>
         </body>
 	</file>
 </xliff>
