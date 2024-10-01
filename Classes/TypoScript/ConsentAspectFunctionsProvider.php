@@ -34,7 +34,7 @@ class ConsentAspectFunctionsProvider implements ExpressionFunctionProviderInterf
                 return false;
             }
             if (array_key_exists($cookieName, $cookies)) {
-                $cookieData = json_decode($cookies[$cookieName], true);
+                $cookieData = json_decode((string) $cookies[$cookieName], true);
                 if ($cookieData['consents'][$consentType]['status'] === 1) {
                     return true;
                 }

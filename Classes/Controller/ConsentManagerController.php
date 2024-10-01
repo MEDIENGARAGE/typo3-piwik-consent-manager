@@ -47,7 +47,7 @@ class ConsentManagerController extends ActionController
      * @throws ExtensionConfigurationExtensionNotConfiguredException
      * @throws ExtensionConfigurationPathDoesNotExistException
      */
-    public function consentManagerAction()
+    public function consentManagerAction(): \Psr\Http\Message\ResponseInterface
     {
         $configurationManager = GeneralUtility::makeInstance(ConfigurationManager::class);
         $settings = $configurationManager->getConfiguration(
@@ -56,7 +56,7 @@ class ConsentManagerController extends ActionController
         );
 
         $currentPage = $GLOBALS['TSFE']->id;
-        $hideOnPages = explode(',', $settings['hideOnPages']);
+        $hideOnPages = explode(',', (string) $settings['hideOnPages']);
 
         /** @var ServerRequest $request */
         $request = $GLOBALS['TYPO3_REQUEST'];
@@ -70,6 +70,7 @@ class ConsentManagerController extends ActionController
 
         $this->view->assign(self::$CM_KEY, $settings[self::$CM_KEY]);
         $this->view->assign(self::$CM_URL, $settings[self::$CM_URL]);
+        return $this->htmlResponse();
     }
 
     /**
@@ -78,7 +79,7 @@ class ConsentManagerController extends ActionController
      *
      * @return false|string
      */
-    public function privacyContentElementsAction()
+    public function privacyContentElementsAction(): \Psr\Http\Message\ResponseInterface
     {
         $pageId = $GLOBALS['TSFE']->id;
 
@@ -87,19 +88,12 @@ class ConsentManagerController extends ActionController
 
         /** @var Statement $statement */
         $statement = $qb->select('*')
-            ->from('tt_content')
-            ->where(
-                $qb->expr()->andX(
-                    $qb->expr()
-                        ->eq('pid', $qb->createNamedParameter($pageId, Connection::PARAM_INT)),
-                    $qb->expr()
-                        ->in('CType', $qb->createNamedParameter(
-                            array_keys($this->cTypeToTemplateMapping),
-                            ConnectionAlias::PARAM_STR_ARRAY)
-                        )
-                )
-            )
-            ->execute();
+            ->from('tt_content')->where($qb->expr()->and($qb->expr()
+            ->eq('pid', $qb->createNamedParameter($pageId, Connection::PARAM_INT)), $qb->expr()
+            ->in('CType', $qb->createNamedParameter(
+                array_keys($this->cTypeToTemplateMapping),
+                ConnectionAlias::PARAM_STR_ARRAY)
+            )))->executeQuery();
 
         $renderedCes = [];
 
@@ -119,6 +113,6 @@ class ConsentManagerController extends ActionController
             $renderedCes[] = trim($view->render());
         }
 
-        return json_encode($renderedCes);
+        return $this->jsonResponse(json_encode($renderedCes));
     }
 }

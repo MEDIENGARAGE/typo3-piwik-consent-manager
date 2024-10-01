@@ -17,13 +17,13 @@ class ConsentSelectItems
      * @param array $configuration Current field configuration
      * @throws InvalidConfigurationTypeException
      */
-    public function getConsentSelectItems(array &$configuration)
+    public function getConsentSelectItems(array &$configuration): void
     {
         $configuration['items'] = [];
 
         $label = LocalizationUtility::translate(
             'choose_consent_type',
-            'piwik_consent_manager'
+            'PiwikConsentManager'
         );
         $configuration['items'][] = [$label, '0'];
 
@@ -40,7 +40,7 @@ class ConsentSelectItems
         foreach ($consentsAvailable as $consent) {
             $label = LocalizationUtility::translate(
                 'consent_type_' . $consent,
-                'piwik_consent_manager'
+                'PiwikConsentManager'
             );
 
             $configuration['items'][] = [$label ?? $consent, $consent];

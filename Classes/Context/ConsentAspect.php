@@ -51,6 +51,6 @@ class ConsentAspect implements AspectInterface
             return $this->consents[$name];
         }
 
-        throw new AspectPropertyNotFoundException('Property "' . $name . '" not found in Aspect "' . __CLASS__ . '".', 1529996567);
+        throw new AspectPropertyNotFoundException('Property "' . $name . '" not found in Aspect "' . self::class . '".', 1529996567);
     }
 }

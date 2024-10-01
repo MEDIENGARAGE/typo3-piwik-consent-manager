@@ -7,11 +7,10 @@ $EM_CONF[$_EXTKEY] = [
     'author' => 'Florian Fassing',
     'author_email' => 'ffassing@mediengarage.de',
     'state' => 'beta',
-    'clearCacheOnLoad' => 0,
     'version' => '0.2.4',
     'constraints' => [
         'depends' => [
-            'typo3' => '10.4.0-11.5.99',
+            'typo3' => '12.4.0-12.4.99',
         ],
         'conflicts' => [],
         'suggests' => [],

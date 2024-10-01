@@ -10,7 +10,7 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 class GetPropertyFromAspectViewHelper extends AbstractViewHelper
 {
-    public function initializeArguments()
+    public function initializeArguments(): void
     {
         $this->registerArgument('aspect', 'string', 'Aspect to get property from.', true);
         $this->registerArgument('property', 'string', 'Property to get from aspect.', true);

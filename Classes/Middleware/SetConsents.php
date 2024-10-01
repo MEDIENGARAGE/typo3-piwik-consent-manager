@@ -45,7 +45,7 @@ class SetConsents implements MiddlewareInterface
         $context = GeneralUtility::makeInstance(Context::class);
 
         if (array_key_exists($cookieName, $cookies)) {
-            $cookieData = json_decode($cookies[$cookieName], true);
+            $cookieData = json_decode((string) $cookies[$cookieName], true);
             $consents = $cookieData['consents'];
 
             // Temporarily store consent information in context so views can read it for conditional rendering.
