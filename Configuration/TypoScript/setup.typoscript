@@ -1,3 +1,39 @@
+page {
+    1649152563 = USER
+    1649152563.userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+    1649152563.extensionName= PiwikConsentManager
+    1649152563.pluginName = Pi1
+    1649152563.vendorName = MEDIENGARAGE
+}
+
+#[PIDinRootline = {$tx_piwik_consent_manager.excludeConsentManagerFromPid}]
+#	page.1649152563 >
+#[global]
+
+ajaxPiwikConsentManager = PAGE
+ajaxPiwikConsentManager {
+    typeNum = 1649152563
+    10 = USER
+    10.userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+    10.extensionName= PiwikConsentManager
+    10.pluginName = Pi1
+    10.vendorName = MEDIENGARAGE
+    config {
+        disableAllHeaderCode = 1
+        additionalHeaders = Content-type:application/json
+        xhtml_cleaning = 0
+        debug = 0
+        no_cache = 1
+        admPanel = 0
+    }
+}
+
+plugin.tx_piwik_consent_manager {
+    settings {
+        consentsAvailable = analytics, ab_testing_and_personalization, conversion_tracking, marketing_automation, remarketing, user_feedback, custom_consent
+    }
+}
+
 tt_content.piwikconsentmanager_youtube = COA_INT
 tt_content.piwikconsentmanager_youtube {
     10 =< lib.contentElement

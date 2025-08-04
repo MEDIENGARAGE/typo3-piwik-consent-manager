@@ -9,9 +9,7 @@ if (!defined('TYPO3')) {
     'Pi1',
     [\MEDIENGARAGE\Piwikconsentmanager\Controller\ConsentManagerController::class => 'consentManager, privacyContentElements'],
     // non-cacheable actions
-    [\MEDIENGARAGE\Piwikconsentmanager\Controller\ConsentManagerController::class => 'consentManager, privacyContentElements']
+    [\MEDIENGARAGE\Piwikconsentmanager\Controller\ConsentManagerController::class => 'consentManager, privacyContentElements'],
+    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
 );
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
-    '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:piwik_consent_manager/Configuration/TsConfig/Page/All.tsconfig">'
-);

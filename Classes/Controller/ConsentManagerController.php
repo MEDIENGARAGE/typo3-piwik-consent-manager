@@ -55,7 +55,7 @@ class ConsentManagerController extends ActionController
             'piwik_consent_manager'
         );
 
-        $currentPage = $GLOBALS['TSFE']->id;
+        $currentPage = $this->request->getAttribute('frontend.page.information')->getId();
         $hideOnPages = explode(',', (string) $settings['hideOnPages']);
 
         /** @var ServerRequest $request */
@@ -81,7 +81,7 @@ class ConsentManagerController extends ActionController
      */
     public function privacyContentElementsAction(): \Psr\Http\Message\ResponseInterface
     {
-        $pageId = $GLOBALS['TSFE']->id;
+        $pageId = $this->request->getAttribute('frontend.page.information')->getId();
 
         /** @var QueryBuilder $qb */
         $qb = GeneralUtility::makeInstance(ConnectionPool::class)->getQueryBuilderForTable('tt_content');
@@ -101,11 +101,11 @@ class ConsentManagerController extends ActionController
             /** @var StandaloneView $view */
             $view = GeneralUtility::makeInstance(StandaloneView::class);
 
-            $view->setLayoutRootPaths([GeneralUtility::getFileAbsFileName('EXT:piwik_consent_manager/Resources/Private/Layouts')]);
-            $view->setPartialRootPaths([GeneralUtility::getFileAbsFileName('EXT:piwik_consent_manager/Resources/Private/Partials')]);
-            $view->setTemplateRootPaths([GeneralUtility::getFileAbsFileName('EXT:piwik_consent_manager/Resources/Private/Templates')]);
+            $view->getRenderingContext()->getTemplatePaths()->setLayoutRootPaths([GeneralUtility::getFileAbsFileName('EXT:piwik_consent_manager/Resources/Private/Layouts')]);
+            $view->getRenderingContext()->getTemplatePaths()->setPartialRootPaths([GeneralUtility::getFileAbsFileName('EXT:piwik_consent_manager/Resources/Private/Partials')]);
+            $view->getRenderingContext()->getTemplatePaths()->setTemplateRootPaths([GeneralUtility::getFileAbsFileName('EXT:piwik_consent_manager/Resources/Private/Templates')]);
             // TODO: template must be dynamic.
-            $view->setTemplate('YouTube.html');
+            $view->getRenderingContext()->setControllerAction('YouTube.html');
 
             $view->assign('data', $ce);
 
