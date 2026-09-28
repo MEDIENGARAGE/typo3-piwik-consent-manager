@@ -30,29 +30,29 @@ class SetConsents implements MiddlewareInterface
         $configurationManager = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(ConfigurationManager::class);
         $extensionConfiguration = $configurationManager->getConfiguration(
             ConfigurationManagerInterface::CONFIGURATION_TYPE_FULL_TYPOSCRIPT);
-        $settings = $extensionConfiguration['plugin.']['tx_piwik_consent_manager.']['settings.'];
+        $settings = $extensionConfiguration['plugin.']['tx_piwik_consent_manager.']['settings.'] ?? [];
 
         $cookies = $request->getCookieParams();
-        $cookieName = 'ppms_privacy_' . $settings[ConsentManagerController::$CM_KEY];
+        $cookieName = 'ppms_privacy_' . ($settings[ConsentManagerController::$CM_KEY] ?? '');
 
-        $context = GeneralUtility::makeInstance(Context::class);
+        // Clients may send an empty, truncated or otherwise unusable cookie. Anything we cannot parse into a
+        // consent list is treated like a missing cookie, which leaves all consents set to false.
+        $consents = [];
 
         if (array_key_exists($cookieName, $cookies)) {
             $cookieData = json_decode((string) $cookies[$cookieName], true);
-            $consents = $cookieData['consents'];
 
-            // Temporarily store consent information in context so views can read it for conditional rendering.
-            $context->setAspect(
-                ConsentManagerController::$ASPECT_NAME,
-                GeneralUtility::makeInstance(ConsentAspect::class, $consents)
-            );
-        } else {
-            // If no cookie was sent, set all consents to false.
-            $context->setAspect(
-                ConsentManagerController::$ASPECT_NAME,
-                GeneralUtility::makeInstance(ConsentAspect::class, [])
-            );
+            if (is_array($cookieData) && is_array($cookieData['consents'] ?? null)) {
+                $consents = $cookieData['consents'];
+            }
         }
+
+        // Temporarily store consent information in context so views can read it for conditional rendering.
+        $context = GeneralUtility::makeInstance(Context::class);
+        $context->setAspect(
+            ConsentManagerController::$ASPECT_NAME,
+            GeneralUtility::makeInstance(ConsentAspect::class, $consents)
+        );
 
         return $handler->handle($request);
     }

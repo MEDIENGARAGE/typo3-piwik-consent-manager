@@ -31,10 +31,11 @@ class ConsentAspect implements AspectInterface
             'piwik_consent_manager'
         );
 
-        $consentsAvailable = GeneralUtility::trimExplode(',', $settings['consentsAvailable']);
+        $consentsAvailable = GeneralUtility::trimExplode(',', (string) ($settings['consentsAvailable'] ?? ''), true);
 
         foreach ($consentsAvailable as $consent) {
-            $this->consents[$consent] = !empty($consents[$consent]) && $consents[$consent]['status'] === 1;
+            $consentData = $consents[$consent] ?? null;
+            $this->consents[$consent] = is_array($consentData) && (int) ($consentData['status'] ?? 0) === 1;
         }
     }
 
